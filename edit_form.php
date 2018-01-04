@@ -60,8 +60,8 @@ class block_triptych_edit_form extends block_edit_form {
 
         $boxgroup[] = $mform->createElement('html', '<hr>');
 
-        // $this->repeat_elements($boxgroup, 3, $options, 'boxes', 'add_boxes', 1,
-        //         get_string('addbox', 'block_triptych'), true);
+        $this->repeat_elements($boxgroup, 3, $options, 'boxes', 'add_boxes', 1,
+                get_string('addbox', 'block_triptych'), true);
 
     }
 

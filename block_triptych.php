@@ -126,11 +126,14 @@ class block_triptych extends block_base {
                 $html .= html_writer::start_tag('a', array('href' => $url, 'class' => 'boxlink'));
                 $html .= html_writer::start_tag('object');
             }
-            $show = ($c == 0) ? 'block' : 'none';
             $html .= html_writer::start_tag('div', array(
-                'class' => 'boxwrap',
-                'style' => "padding-bottom: $height; background-image: url($image); display: $show;"
+                'class' => 'triptych_box',
             ));
+            $html .= html_writer::start_tag('div', array(
+                'class' => 'image',
+                'style' => "background-image: url($image);"
+            ));
+            $html .= html_writer::end_tag('div');
             if ($title) {
                 $html .= html_writer::tag('h4', $title, array('class' => 'title'));
             }
