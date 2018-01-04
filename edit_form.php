@@ -15,20 +15,20 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Form for editing a carousel block instance.
+ * Form for editing a triptych block instance.
  *
- * @package   block_carousel
- * @copyright 2016 Brendan Heywood (brendan@catalyst-au.net)
+ * @package   block_triptych
+ * @copyright 2017 Oliver Redding (oliverredding@catalyst.net.nz)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 /**
- * Form for editing carousel block instances.
+ * Form for editing triptych block instances.
  *
- * @copyright 2016 Brendan Heywood (brendan@catalyst-au.net)
+ * @copyright 2017 Oliver Redding (oliverredding@catalyst.net.nz)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class block_carousel_edit_form extends block_edit_form {
+class block_triptych_edit_form extends block_edit_form {
 
     /**
      * Form def
@@ -36,42 +36,32 @@ class block_carousel_edit_form extends block_edit_form {
      */
     protected function specific_definition($mform) {
 
-        $mform->addElement('header', 'configheader', get_string('blocksettings', 'block_carousel'));
-
-        $mform->addElement('text', 'config_height', get_string('configheight', 'block_carousel'));
-        $mform->setType('config_height', PARAM_TEXT);
-        $mform->setDefault('config_height', '50%');
-
-        $mform->addElement('text', 'config_playspeed', get_string('configplayspeed', 'block_carousel'));
-        $mform->setType('config_playspeed', PARAM_FLOAT);
-        $mform->setDefault('config_playspeed', '4');
-
-        $mform->addElement('header', 'configheaderslides', get_string('slideheader', 'block_carousel'));
-        $mform->setExpanded('configheaderslides');
+        $mform->addElement('header', 'configheaderboxes', get_string('boxheader', 'block_triptych'));
+        $mform->setExpanded('configheaderboxes');
 
         $options = array();
-        $slidegroup = array();
+        $boxgroup = array();
 
-        $slidegroup[] = $mform->createElement('text', 'config_title',
-                get_string('slidetitle', 'block_carousel'));
+        $boxgroup[] = $mform->createElement('text', 'config_title',
+                get_string('boxtitle', 'block_triptych'));
         $options['config_title']['type'] = PARAM_TEXT;
 
-        $slidegroup[] = $mform->createElement('textarea', 'config_text',
-                get_string('slidetext', 'block_carousel'));
+        $boxgroup[] = $mform->createElement('textarea', 'config_text',
+                get_string('boxtext', 'block_triptych'));
         $options['config_text']['type'] = PARAM_TEXT;
 
-        $slidegroup[] = $mform->createElement('text', 'config_url',
-                get_string('slideurl', 'block_carousel'));
+        $boxgroup[] = $mform->createElement('text', 'config_url',
+                get_string('boxurl', 'block_triptych'));
         $options['config_url']['type'] = PARAM_URL;
 
-        $slidegroup[] = $mform->createElement('filepicker', 'config_image',
-                get_string('slideimage', 'block_carousel'), null, array('accepted_types' => 'image'));
+        $boxgroup[] = $mform->createElement('filepicker', 'config_image',
+                get_string('boximage', 'block_triptych'), null, array('accepted_types' => 'image'));
         $options['config_image']['type'] = PARAM_FILE;
 
-        $slidegroup[] = $mform->createElement('html', '<hr>');
+        $boxgroup[] = $mform->createElement('html', '<hr>');
 
-        $this->repeat_elements($slidegroup, 3, $options, 'slides', 'add_slides', 1,
-                get_string('addslide', 'block_carousel'), true);
+        // $this->repeat_elements($boxgroup, 3, $options, 'boxes', 'add_boxes', 1,
+        //         get_string('addbox', 'block_triptych'), true);
 
     }
 

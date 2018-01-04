@@ -15,10 +15,10 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Carousel block caps.
+ * triptych block caps.
  *
- * @package   block_carousel
- * @copyright 2016 Brendan Heywood (brendan@catalyst-au.net)
+ * @package   block_triptych
+ * @copyright 2017 Oliver Redding (oliverredding@catalyst.net.nz)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -26,7 +26,7 @@ defined('MOODLE_INTERNAL') || die();
 
 $capabilities = array(
 
-    'block/carousel:myaddinstance' => array(
+    'block/triptych:myaddinstance' => array(
         'captype' => 'write',
         'contextlevel' => CONTEXT_SYSTEM,
         'archetypes' => array(
@@ -36,7 +36,7 @@ $capabilities = array(
         'clonepermissionsfrom' => 'moodle/my:manageblocks'
     ),
 
-    'block/carousel:addinstance' => array(
+    'block/triptych:addinstance' => array(
         'riskbitmask' => RISK_SPAM | RISK_XSS,
 
         'captype' => 'write',

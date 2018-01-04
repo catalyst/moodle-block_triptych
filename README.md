@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/CatalystIT-AU/moodle-block_carousel.svg?branch=master)](https://travis-ci.org/CatalystIT-AU/moodle-block_carousel)
+[![Build Status](https://travis-ci.org/Catalyst/moodle-block_triptych.svg?branch=master)](https://travis-ci.org/Catalyst/moodle-block_triptych)
 
-https://moodle.org/plugins/block_carousel
+https://moodle.org/plugins/block_triptych
 
 ![Screen shot](/pix/screenshot.png?raw=true)
 
@@ -12,11 +12,7 @@ https://moodle.org/plugins/block_carousel
 What is this?
 -------------
 
-An easy to use carousel block:
-
-* responsive
-* touch and mouse friendly
-
+A block that displays three cards with images, text and links in a row. Beta development. Not yet fully responsive.
 
 Installation and Configuration
 ------------------------------
@@ -25,15 +21,15 @@ Installation and Configuration
 
     Using git
 
-     git clone git@github.com:CatalystIT-AU/moodle-block_carousel.git blocks/carousel
+     git clone git@github.com:Catalyst/moodle-block_triptych.git blocks/triptych
 
     Or install via the Moodle plugin directory:
 
-     https://moodle.org/plugins/block_carousel
+     https://moodle.org/plugins/block_triptych
 
 2. Then run the Moodle upgrade
 
-3. Now add the block to a page, then configure it add the slides
+3. Now add the block to a page, then configure it add images and text
 
 
 Contributing
@@ -42,40 +38,24 @@ Contributing
 Pull requests are welcome, please adhere to the Moodle code standards
 and use travis to check everything is green.
 
-The slick JS library doesn't conform exactly to Moodle's code standards
-so to rebuild the JS files run:
-
-grunt amd --force
-
 
 Issues and feedback
 -------------------
 
 If you have issues please log them in github here:
 
-https://github.com/CatalystIT-AU/moodle-block_carousel/issues
+https://github.com/Catalyst/moodle-block_triptych/issues
 
-Or if you want paid support please contact Catalyst IT Australia:
+Or if you want paid support please contact Catalyst IT New Zealand:
 
-https://www.catalyst-au.net/contact-us
+https://catalyst.net.nz/content/contact-us
 
 
 Credits and thanks
 ------------------
 
-The core of this plugin is the excellent 'slick' JS library by @kenwheeler:
+This plugin was developed by Catalyst IT New Zealand:
 
-http://kenwheeler.github.io/slick/
+https://catalyst.net.nz/
 
-This plugin was sponsored by Central Queesnland University:
-
-https://www.cqu.edu.au/
-
-![CQU](/pix/cqu.png?raw=true)
-
-This plugin was developed by Catalyst IT Australia:
-
-https://www.catalyst-au.net/
-
-<img alt="Catalyst IT" src="https://cdn.rawgit.com/CatalystIT-AU/moodle-auth_saml2/master/pix/catalyst-logo.svg" width="400">
-
+<img alt="Catalyst IT" src="https://cdn.rawgit.com/Catalyst/moodle-auth_saml2/master/pix/catalyst-logo.svg" width="400">

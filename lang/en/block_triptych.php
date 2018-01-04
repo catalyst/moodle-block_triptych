@@ -15,23 +15,19 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Strings for carousel block
+ * Strings for triptych block
  *
- * @package   block_carousel
- * @copyright 2016 Brendan Heywood (brendan@catalyst-au.net)
+ * @package   block_triptych
+ * @copyright 2017 Oliver Redding (oliverredding@catalyst.net.nz)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['carousel:addinstance'] = 'Add a new carousel block';
-$string['carousel:myaddinstance'] = 'Add a new carousel block to Dashboard';
-$string['addslide'] = 'Add another slide';
-$string['blocksettings'] = 'Carousel settings';
-$string['configheight'] = 'Height (eg 100px or 50%)';
-$string['configplayspeed'] = 'Play speed (in seconds)';
-$string['slideheader'] = 'Slides';
-$string['slideimage'] = 'Image';
-$string['slidetitle'] = 'Title';
-$string['slidetext'] = 'Text';
-$string['slideurl'] = 'URL';
-$string['pluginname'] = 'Carousel';
-
+$string['triptych:addinstance'] = 'Add a new triptych block';
+$string['triptych:myaddinstance'] = 'Add a new triptych block to Dashboard';
+$string['addbox'] = 'Add another box';
+$string['boxheader'] = 'Triptych Boxes';
+$string['boximage'] = 'Image';
+$string['boxtitle'] = 'Title';
+$string['boxtext'] = 'Text';
+$string['boxurl'] = 'URL';
+$string['pluginname'] = 'Triptych';

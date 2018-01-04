@@ -17,8 +17,8 @@
 /**
  * Version details
  *
- * @package   block_carousel
- * @copyright 2016 Brendan Heywood (brendan@catalyst-au.net)
+ * @package   block_triptych
+ * @copyright 2017 Oliver Redding (oliverredding@catalyst.net.nz)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -26,7 +26,7 @@
  * Form for editing HTML block instances.
  *
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- * @package   block_carousel
+ * @package   block_triptych
  * @category  files
  * @param stdClass $course course object
  * @param stdClass $birecordorcm block instance record
@@ -38,7 +38,7 @@
  * @return bool
  * @todo MDL-36050 improve capability check on stick blocks, so we can check user capability before sending images.
  */
-function block_carousel_pluginfile($course, $birecordorcm, $context, $filearea, $args, $forcedownload, array $options=array()) {
+function block_triptych_pluginfile($course, $birecordorcm, $context, $filearea, $args, $forcedownload, array $options=array()) {
     global $DB, $CFG, $USER;
 
     if ($context->contextlevel != CONTEXT_BLOCK) {
@@ -66,7 +66,7 @@ function block_carousel_pluginfile($course, $birecordorcm, $context, $filearea, 
         // At this point there is no way to check SYSTEM context, so ignoring it.
     }
 
-    if ($filearea !== 'slide') {
+    if ($filearea !== 'box') {
         send_file_not_found();
     }
 
@@ -76,7 +76,7 @@ function block_carousel_pluginfile($course, $birecordorcm, $context, $filearea, 
     $itemid = array_pop($args);
     $filepath = '/';
 
-    if (!$file = $fs->get_file($context->id, 'block_carousel', $filearea, $itemid, $filepath, $filename) or $file->is_directory()) {
+    if (!$file = $fs->get_file($context->id, 'block_triptych', $filearea, $itemid, $filepath, $filename) or $file->is_directory()) {
         send_file_not_found();
     }
 

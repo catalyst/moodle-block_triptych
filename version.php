@@ -17,14 +17,13 @@
 /**
  * Version details
  *
- * @package   block_carousel
- * @copyright 2016 Brendan Heywood (brendan@catalyst-au.net)
+ * @package   block_triptych
+ * @copyright 2017 Oliver Redding (oliverredding@catalyst.net.nz)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 201604602;        // The current plugin version (Date: YYYYMMDDXX)
+$plugin->version   = 2017010400;        // The current plugin version (Date: YYYYMMDDXX)
 $plugin->requires  = 2015111000;        // Requires this Moodle version.
-$plugin->component = 'block_carousel';  // Full name of the plugin (used for diagnostics).
-
+$plugin->component = 'block_triptych';  // Full name of the plugin (used for diagnostics).

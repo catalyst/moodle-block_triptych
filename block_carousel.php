@@ -15,26 +15,26 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Carousel block
+ * triptych block
  *
- * @package   block_carousel
- * @copyright 2016 Brendan Heywood (brendan@catalyst-au.net)
+ * @package   block_triptych
+ * @copyright 2017 Oliver Redding (oliverredding@catalyst.net.nz)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 /**
- * Carousel block
+ * triptych block
  *
- * @copyright 2016 Brendan Heywood (brendan@catalyst-au.net)
+ * @copyright 2017 Oliver Redding (oliverredding@catalyst.net.nz)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class block_carousel extends block_base {
+class block_triptych extends block_base {
 
     /**
      * Init
      */
     public function init() {
-        $this->title = get_string('pluginname', 'block_carousel');
+        $this->title = get_string('pluginname', 'block_triptych');
     }
 
     /**
@@ -69,7 +69,7 @@ class block_carousel extends block_base {
     }
 
     /**
-     * We could have multiple carousels
+     * We could have multiple triptychs
      *
      * @return bool
      */
@@ -78,7 +78,7 @@ class block_carousel extends block_base {
     }
 
     /**
-     * The html for the carousel
+     * The html for the triptych
      */
     public function get_content() {
         global $CFG;
@@ -86,7 +86,7 @@ class block_carousel extends block_base {
         require_once($CFG->libdir . '/filelib.php');
 
         $blockid = $this->context->id;
-        $html = html_writer::start_tag('div', array('id' => 'carousel' . $blockid));
+        $html = html_writer::start_tag('div', array('id' => 'triptych' . $blockid));
 
         if ($this->content !== null) {
             return $this->content;
@@ -102,14 +102,12 @@ class block_carousel extends block_base {
 
         $fs = get_file_storage();
 
-        $height = $config->height;
-
         for ($c = 0; $c < count($config->title); $c++) {
             $title = $config->title[$c];
             $text = $config->text[$c];
             $url = $config->url[$c];
             $html .= html_writer::start_tag('div'); // This will be modified by slick.
-            $files   = $fs->get_area_files($this->context->id, 'block_carousel', 'slide', $c);
+            $files   = $fs->get_area_files($this->context->id, 'block_triptych', 'box', $c);
 
             $image = '';
             foreach ($files as $file) {
@@ -122,15 +120,15 @@ class block_carousel extends block_base {
                         $file->get_filearea(), $file->get_itemid(), $file->get_filepath(), $file->get_filename());
             }
 
-            // Wrapping the slide in an object is a neat trick allowing the slide to be a link
+            // Wrapping the box in an object is a neat trick allowing the box to be a link
             // and for the text within it to also have sub-links.
             if ($url) {
-                $html .= html_writer::start_tag('a', array('href' => $url, 'class' => 'slidelink'));
+                $html .= html_writer::start_tag('a', array('href' => $url, 'class' => 'boxlink'));
                 $html .= html_writer::start_tag('object');
             }
             $show = ($c == 0) ? 'block' : 'none';
             $html .= html_writer::start_tag('div', array(
-                'class' => 'slidewrap',
+                'class' => 'boxwrap',
                 'style' => "padding-bottom: $height; background-image: url($image); display: $show;"
             ));
             if ($title) {
@@ -146,10 +144,6 @@ class block_carousel extends block_base {
             }
             $html .= html_writer::end_tag('div');
         }
-
-        $this->page->requires->css('/blocks/carousel/extlib/slick-1.5.9/slick/slick.css');
-        $this->page->requires->css('/blocks/carousel/extlib/slick-1.5.9/slick/slick-theme.css');
-        $this->page->requires->js_call_amd('block_carousel/carousel', 'init', array($blockid, $config->playspeed * 1000));
 
         $html .= html_writer::end_tag('div');
         $this->content->text = $html;
@@ -174,7 +168,7 @@ class block_carousel extends block_base {
     public function instance_config_save($data, $nolongerused = false) {
         $config = clone($data);
         for ($c = 0; $c < count($data->image); $c++) {
-            file_save_draft_area_files($data->image[$c], $this->context->id, 'block_carousel', 'slide', $c);
+            file_save_draft_area_files($data->image[$c], $this->context->id, 'block_triptych', 'box', $c);
         }
         parent::instance_config_save($config, $nolongerused);
     }
@@ -184,8 +178,7 @@ class block_carousel extends block_base {
      */
     public function instance_delete() {
         $fs = get_file_storage();
-        $fs->delete_area_files($this->context->id, 'block_carousel');
+        $fs->delete_area_files($this->context->id, 'block_triptych');
         return true;
     }
 }
-

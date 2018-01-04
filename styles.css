@@ -1,7 +1,7 @@
-.block_carousel {
+.block_triptych {
     margin-bottom: 60px;
 }
-.block_carousel .slidewrap {
+.block_triptych .boxwrap {
     position: relative;
     height: 0px;
     color: white;
@@ -9,13 +9,13 @@
     background-position: 50% 50%;
 }
 
-.block_carousel .slidewrap .title {
+.block_triptych .boxwrap .title {
     padding: 1em;
     margin: 0;
     text-shadow: 0px 2px 6px #000;
 }
 
-.block_carousel .slidewrap .text {
+.block_triptych .boxwrap .text {
     position: absolute;
     left: 0;
     right: 0;
