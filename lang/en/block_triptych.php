@@ -18,7 +18,7 @@
  * Strings for triptych block
  *
  * @package   block_triptych
- * @copyright 2017 Oliver Redding (oliverredding@catalyst.net.nz)
+ * @copyright 2018 Oliver Redding (oliverredding@catalyst.net.nz)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 

@@ -18,14 +18,14 @@
  * Form for editing a triptych block instance.
  *
  * @package   block_triptych
- * @copyright 2017 Oliver Redding (oliverredding@catalyst.net.nz)
+ * @copyright 2018 Oliver Redding (oliverredding@catalyst.net.nz)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 /**
  * Form for editing triptych block instances.
  *
- * @copyright 2017 Oliver Redding (oliverredding@catalyst.net.nz)
+ * @copyright 2018 Oliver Redding (oliverredding@catalyst.net.nz)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class block_triptych_edit_form extends block_edit_form {

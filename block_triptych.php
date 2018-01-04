@@ -18,14 +18,14 @@
  * triptych block
  *
  * @package   block_triptych
- * @copyright 2017 Oliver Redding (oliverredding@catalyst.net.nz)
+ * @copyright 2018 Oliver Redding (oliverredding@catalyst.net.nz)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 /**
  * triptych block
  *
- * @copyright 2017 Oliver Redding (oliverredding@catalyst.net.nz)
+ * @copyright 2018 Oliver Redding (oliverredding@catalyst.net.nz)
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class block_triptych extends block_base {
