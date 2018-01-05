@@ -86,7 +86,7 @@ class block_triptych extends block_base {
         require_once($CFG->libdir . '/filelib.php');
 
         $blockid = $this->context->id;
-        $html = html_writer::start_tag('div', array('id' => 'triptych' . $blockid));
+        $html = html_writer::start_tag('div', array('id' => 'triptych_' . $blockid, 'class' => 'triptych-container'));
 
         if ($this->content !== null) {
             return $this->content;
@@ -106,7 +106,7 @@ class block_triptych extends block_base {
             $title = $config->title[$c];
             $text = $config->text[$c];
             $url = $config->url[$c];
-            $html .= html_writer::start_tag('div'); // This will be modified by slick.
+            $urltext = $config->urltext[$c];
             $files   = $fs->get_area_files($this->context->id, 'block_triptych', 'box', $c);
 
             $image = '';
@@ -120,31 +120,31 @@ class block_triptych extends block_base {
                         $file->get_filearea(), $file->get_itemid(), $file->get_filepath(), $file->get_filename());
             }
 
-            // Wrapping the box in an object is a neat trick allowing the box to be a link
-            // and for the text within it to also have sub-links.
-            if ($url) {
-                $html .= html_writer::start_tag('a', array('href' => $url, 'class' => 'boxlink'));
-                $html .= html_writer::start_tag('object');
-            }
             $html .= html_writer::start_tag('div', array(
                 'class' => 'triptych_box',
             ));
+            $html .= html_writer::tag('div', '', array('class' => 'image', 'style' => "background-image: url($image);"));
             $html .= html_writer::start_tag('div', array(
-                'class' => 'image',
-                'style' => "background-image: url($image);"
+                'class' => 'content',
             ));
-            $html .= html_writer::end_tag('div');
             if ($title) {
                 $html .= html_writer::tag('h4', $title, array('class' => 'title'));
             }
             if ($text) {
+                if (strlen($text) > 150) {
+                    $text = substr($text, 0, 150) . "&hellip;";
+                }
                 $html .= html_writer::tag('div', $text, array('class' => 'text'));
             }
-            $html .= html_writer::end_tag('div');
             if ($url) {
-                $html .= html_writer::end_tag('object');
-                $html .= html_writer::end_tag('a');
+                $urltext = !empty($urltext) ? $urltext : 'Find out more';
+                $html .= html_writer::start_tag('div', array(
+                    'class' => 'singlebutton',
+                ));
+                $html .= html_writer::tag('a', $urltext, array('href' => $url, 'class' => 'boxlink btn'));
+                $html .= html_writer::end_tag('div');
             }
+            $html .= html_writer::end_tag('div');
             $html .= html_writer::end_tag('div');
         }
 

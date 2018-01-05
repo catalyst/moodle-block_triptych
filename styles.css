@@ -1,59 +1,66 @@
 .block_triptych {
-    margin-bottom: 60px;
-    width: 100%;
+    margin: 30px auto;
+}
+
+.triptych-container {
+}
+
+.block_triptych .block-content .triptych_box {
+    display: inline-block;
+    position: relative;
+    width: 32%;
+    height: 550px;
+    vertical-align: top;
+    margin: 0 1%;
+    border: 1px solid #eee;
+    box-shadow: 0 0 7px #eee;
     font-size: 0;
 }
 
-.block_triptych .block-content > div > div {
-    display: inline-block;
-    width: 30%;
-    margin: 0 2.5%;
-}
-
-.block_triptych .block-content > div > div:first-child {
+.block_triptych .block-content .triptych_box:first-child {
     margin-left: 0;
 }
 
-.block_triptych .block-content > div > div:last-child {
+.block_triptych .block-content .triptych_box:last-child {
     margin-right: 0;
-}
-
-.block_triptych .triptych_box {
-    position: relative;
-    height: 500px;
-    width: 100%;
-    color: white;
-    font-size: 16px;
-    border: 1px solid #eee;
-    box-shadow: 0 0 7px #eee;
 }
 
 .block_triptych .image {
     position: relative;
-    height: 200px;
+    height: 45%;
     width: 100%;
     background-size: cover;
     background-position: 50% 50%;
 }
 
-aside#block-region-side-pre .block .block-header .block-title {
-    color: [[setting:textcolor]];
-}
-aside#block-region-main .block .block-header .block-title {
-    box-shadow: inset 0 -2px 0 [[setting:highlightcolor2]];
-}
-aside#block-region-side-post .block .block-header .block-title {
-    box-shadow: inset 0 -2px 0 [[setting:highlightcolor3]];
-}
-
-.block_triptych .triptych_box .title {
-    padding: 1em;
-    margin: 0;
-    text-shadow: 0px 2px 6px #000;
-}
-
-.block_triptych .triptych_box .text {
+.block_triptych .triptych_box .content {
     position: relative;
-    padding: 1em;
-    background: rgba(0,0,0,.4);
+    padding: 30px;
+    height: 55%;
+    overflow-y: hidden;
+    font-size: 16px;
+}
+
+.block_triptych .triptych_box .content .title {
+    font-size: 1.75em;
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+
+.block_triptych .triptych_box .content .text {
+    height: 95px;
+    overflow-y: hidden;
+}
+
+.block_triptych .triptych_box .singlebutton {
+    position: absolute;
+    width: 100%;
+    bottom: 40px;
+    left: 0;
+    text-align: center;
+}
+
+.block_triptych .triptych_box .singlebutton .boxlink {
+    min-width: 120px;
+    padding: 10px;
 }
