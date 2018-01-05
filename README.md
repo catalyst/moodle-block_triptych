@@ -2,7 +2,7 @@
 
 https://moodle.org/plugins/block_triptych
 
-![Screen shot](/pix/screenshot.png?raw=true)
+![Screen shot](/pix/screenshot1.png?raw=true)
 
 * [What is this?](#what-is-this)
 * [Installation and configuration](#installation-and-configuration)
