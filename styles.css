@@ -9,12 +9,17 @@
     display: inline-block;
     position: relative;
     width: 32%;
-    height: 550px;
+    height: 480px;
     vertical-align: top;
     margin: 0 1%;
     border: 1px solid #eee;
     box-shadow: 0 0 7px #eee;
     font-size: 0;
+    transition: all 0.3s;
+}
+
+.block_triptych .block-content a.triptych_box:hover {
+    box-shadow: 0 0 12px 3px #a9a9a9;
 }
 
 .block_triptych .block-content .triptych_box:first-child {
@@ -27,7 +32,7 @@
 
 .block_triptych .image {
     position: relative;
-    height: 45%;
+    height: 250px;
     width: 100%;
     background-size: cover;
     background-position: 50% 50%;
@@ -36,20 +41,15 @@
 .block_triptych .triptych_box .content {
     position: relative;
     padding: 30px;
-    height: 55%;
+    height: 230px;
     overflow-y: hidden;
     font-size: 16px;
 }
 
 .block_triptych .triptych_box .content .title {
-    font-size: 1.75em;
     margin-bottom: 15px;
     margin-top: 0;
-}
-
-.block_triptych .triptych_box .content .text {
-    height: 95px;
-    overflow-y: hidden;
+    font-size: 1.75em;
 }
 
 .block_triptych .triptych_box .singlebutton {

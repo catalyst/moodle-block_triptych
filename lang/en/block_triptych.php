@@ -30,5 +30,4 @@ $string['boximage'] = 'Image';
 $string['boxtitle'] = 'Title';
 $string['boxtext'] = 'Text';
 $string['boxurl'] = 'URL';
-$string['boxurltext'] = 'Button text';
 $string['pluginname'] = 'Triptych';

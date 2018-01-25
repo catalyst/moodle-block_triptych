@@ -106,7 +106,6 @@ class block_triptych extends block_base {
             $title = $config->title[$c];
             $text = $config->text[$c];
             $url = $config->url[$c];
-            $urltext = $config->urltext[$c];
             $files   = $fs->get_area_files($this->context->id, 'block_triptych', 'box', $c);
 
             $image = '';
@@ -120,9 +119,16 @@ class block_triptych extends block_base {
                         $file->get_filearea(), $file->get_itemid(), $file->get_filepath(), $file->get_filename());
             }
 
-            $html .= html_writer::start_tag('div', array(
-                'class' => 'triptych_box',
-            ));
+            if ($url) {
+                $html .= html_writer::start_tag('a', array(
+                    'href' => $url,
+                    'class' => 'triptych_box',
+                ));
+            } else {
+                $html .= html_writer::start_tag('div', array(
+                    'class' => 'triptych_box',
+                ));
+            }
             $html .= html_writer::tag('div', '', array('class' => 'image', 'style' => "background-image: url($image);"));
             $html .= html_writer::start_tag('div', array(
                 'class' => 'content',
@@ -136,16 +142,12 @@ class block_triptych extends block_base {
                 }
                 $html .= html_writer::tag('div', $text, array('class' => 'text'));
             }
+            $html .= html_writer::end_tag('div');
             if ($url) {
-                $urltext = !empty($urltext) ? $urltext : 'Find out more';
-                $html .= html_writer::start_tag('div', array(
-                    'class' => 'singlebutton',
-                ));
-                $html .= html_writer::tag('a', $urltext, array('href' => $url, 'class' => 'boxlink btn'));
+                $html .= html_writer::end_tag('a');
+            } else {
                 $html .= html_writer::end_tag('div');
             }
-            $html .= html_writer::end_tag('div');
-            $html .= html_writer::end_tag('div');
         }
 
         $html .= html_writer::end_tag('div');

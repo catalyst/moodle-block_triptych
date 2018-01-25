@@ -54,10 +54,6 @@ class block_triptych_edit_form extends block_edit_form {
                 get_string('boxurl', 'block_triptych'));
         $options['config_url']['type'] = PARAM_URL;
 
-        $boxgroup[] = $mform->createElement('text', 'config_urltext',
-                get_string('boxurltext', 'block_triptych'));
-        $options['config_urltext']['type'] = PARAM_TEXT;
-
         $boxgroup[] = $mform->createElement('filepicker', 'config_image',
                 get_string('boximage', 'block_triptych'), null, array('accepted_types' => 'image'));
         $options['config_image']['type'] = PARAM_FILE;
